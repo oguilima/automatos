@@ -1,0 +1,393 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.page-wrap {
+  height: 100vh;
+  position: relative;
+  padding: 75px 15px 50px 15px;
+  background-color: #fafafa;
+}
+
+.vend-outer {
+  width: 400px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  height: 500px;
+  background-color: #1b71e2;
+  padding: 20px;
+  position: relative;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.display-box {
+  position: absolute;
+  bottom: 22px;
+  left: 15px;
+  right: 15px;
+  height: 25px;
+  padding: 0px 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.display {
+  flex-basis: 75px;
+  background-color: #333;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  color: goldenrod;
+  align-self: Stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-box {
+  position: absolute;
+  top: 113px;
+  right: 35px;
+  background-color: #333;
+  width: 52px;
+  height: 25px;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #ddd;
+}
+
+.coin-box {
+  position: absolute;
+  right: 10px;
+  top: 150px;
+  width: 100px;
+  height: 25px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.coin-outter {
+  background-color: #ddd;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  border-radius: 100%;
+  border: 1px dotted #696969;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.help-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+}
+
+.coin-outter:active {
+  box-shadow: none;
+}
+
+.soda-count {
+  position: absolute;
+  right: 10px;
+  top: 19px;
+  background-color: #333;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+   width: 100px;
+   height: 25px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: goldenrod;
+   border-radius: 5px;
+}
+
+.pepsi-box {
+  position: absolute;
+  top: 0;
+  left: 23px;
+  width: 45px;
+  height: 100%;
+}
+
+.coke-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 127px;
+}
+
+.sprite-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50px;
+}
+
+.fanta-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100px;
+}
+
+.soda,
+.grab-soda {
+  position: absolute;
+  z-index: 999;
+  height: 30px;
+  width: 26px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.return-box {
+  position: absolute;
+  top: 300px;
+  right: 55px;
+  background-color: #333;
+  width: 10px;
+  height: 15px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.return-box:active {
+  box-shadow: none;
+}
+
+.coke {
+  background-color: #D5212B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  bottom: 0;
+  left: 0;
+}
+
+.sprite {
+  background-color: #17A053;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  bottom: 0;
+  left: 0;
+}
+
+.fanta {
+  background-color: #FF8300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  bottom: 0;
+  left: 0;
+}
+
+.pepsi {
+  background-color: #004A7E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  bottom: 0;
+  left: 0px;
+  transition: all .5s;
+}
+
+.price-box {
+  color: #ddd;
+  position: absolute;
+  z-index: 99;
+}
+
+.coke-price {
+  top: 75px;
+  left: 175px;
+}
+
+.pepsi-price {
+  top: 75px;
+  left: 22px;
+}
+
+.fanta-price {
+  top: 75px;
+  left: 102px;
+}
+
+.sprite-price {
+  top: 75px;
+  right: 30px;
+}
+
+.touch-pad {
+  background-color: #333;
+  position: absolute;
+  right: 5%;
+  top: 35%;
+  width: 75px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+   border-radius: 5px;
+}
+
+.button {
+  border: 1px solid #444;
+  flex-basis: calc(50% - 2px);
+  color: #ddd;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: #555;
+}
+
+.button p {
+  margin: 0;
+}
+
+.vend-back {
+  background-color: #000;
+  position: relative;
+  height: 90%;
+  width: 75%;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+   overflow: hidden;
+   border-radius: 5px;
+}
+
+.product-row {
+  background-color: #111;
+  border-bottom: 4px solid black;
+  height: 81px;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+   display: flex;
+   justify-content: space-around;
+   align-items: flex-end;
+   position: relative;
+}
+
+.product-row .tag {
+  position: absolute;
+  color: #aaa;
+}
+
+.product-row .tag-one {
+  left: 29px;
+  top: 0;
+}
+
+.product-row .tag-two {
+  left: 178px;
+  top: 0;
+}
+
+.product-row .tag-three {
+  left: 254px;
+  top: 0;
+}
+
+.product-row .tag-four {
+  left: 103px;
+  top: 0;
+}
+
+.spiral {
+  background: transparent;
+  border: 2px solid silver;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+
+.inner-spiral {
+  width: 60%;
+  height: 60%;
+  border: 2px solid silver;
+  border-radius: 100%;
+  z-index: 8;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vend-glass {
+  background: rgba(255,255,255, .25);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  border-radius: 5px;
+}
+
+.grab-box {
+  background-color: #333;
+  position: absolute;
+  right: 2%;
+  top: 70.5%;
+  width: 100px;
+  height: 88px;
+  display: flex;
+  flex-wrap: wrap;
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
+  border-radius: 5px;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.bottom-box {
+  padding-top: 150px;
+  background-color: #70D3D0;
+  border-top: 1px solid #ddd;
+  padding: 25px;
+  text-align: center;
+  color: #fff;
+  z-index: 9999;
+}
+
+.heart,
+.bottom-box a {
+  color: #E7263B;
+  text-decoration: none;
+}
