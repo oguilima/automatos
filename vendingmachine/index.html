@@ -1,155 +1,162 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
   <head>
-    <meta charset="utf-8">
-    <title>OOP Vending Machine</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquina de doces</title>
     <link href="style/main.css" rel="stylesheet" />
   </head>
+
   <body>
     <div class="page-wrap">
+
       <div class="vend-container">
         <div class="vend-outer">
-          <div class="return-box" id="return">
+          <div class="reset-box" id="reset">
 
           </div>
           <div class="display-box" id="displayBox">
 
           </div>
-          <div class="pay-box" id="pay">
+          <div class="pagar-box" id="pagar">
 
           </div>
-          <div id="sodaCount" class="soda-count">
+
+          <div id="d-cont" class="doce-cont">
 
           </div>
-          <div class="coin-box">
-            <div class="coin-outter" id="five">
-              <p class="coin">1</p>
-            </div>
-            <div class="coin-outter" id="ten">
-              <p class="coin">2</p>
-            </div>
-            <div class="coin-outter" id="twentyFive">
-              <p class="coin">5</p>
-            </div>
+
+          <div id="inserir" class="inserir">
+
           </div>
+
+          <!--<div class="notas">
+            <div class="n1"><img src="./img/39348963720171732.jpg" alt=""></div>
+            <div class="n5"><img src="./img/Anverso_da_cédula_de_5_reais.png" alt=""></div>
+            <div class="n2"><img src="./img/cédula-2-reais_anverso-1.jpg" alt=""></div>
+         </div>-->
+
           <div class="vend-back">
-            <div class="product-row">
-              <div class="soda-box pepsi-box" id="pepsiBox">
-                <div class="soda pepsi" id="pepsi">
-                  <p class="soda-text">Doce 1</p>
+            <div class="produto-row">
+              <div class="doce-box d1-box" id="d1Box">
+                <div class="doce d1" id="d1">
+                  <img src="./img/candy1.png" alt="">
                 </div>
               </div>
-              <div class="price-box pepsi-price">
-                <p>6</p>
+              <div class="preco-box d1-preco">
+                <p>RS6</p>
               </div>
               <div class="tag tag-one">
                 <p>A1</p>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
             </div>
-            <div class="product-row">
-              <div class="soda-box coke-box" id="cokeBox">
-                <div class="soda coke" id="coke">
-                  <p class="soda-text">Doce 2</p>
+            <div class="produto-row">
+              <div class="doce-box d2-box" id="d2Box">
+                <div class="doce d2" id="d2">
+                  <img src="./img/candy2.png" alt="">
                 </div>
               </div>
-              <div class="price-box coke-price">
-                <p>7</p>
+              <div class="preco-box d2-preco">
+                <p>R$7</p>
               </div>
               <div class="tag tag-two">
                 <p>B3</p>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
             </div>
-            <div class="product-row">
-              <div class="soda-box sprite-box" id="spriteBox">
-                <div class="soda sprite" id="sprite">
-                  <p class="soda-text">Doce 3</p>
+            <div class="produto-row">
+              <div class="doce-box d3-box" id="d3Box">
+                <div class="doce d3" id="d3">
+                  <img src="./img/candy3.png" alt="">
                 </div>
               </div>
-              <div class="price-box sprite-price">
-                <p>8</p>
+              <div class="preco-box d3-preco">
+                <p>RS8</p>
               </div>
               <div class="tag tag-three">
                 <p>C4</p>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
               </div>
-              <div class="spiral">
-                <div class="inner-spiral">
-                  <div class="inner-spiral">
+              <div class="espiral">
+                <div class="in-espiral">
+                  <div class="in-espiral">
 
                   </div>
                 </div>
@@ -171,16 +178,51 @@
             </div>
            
           </div>
-          <div class="grab-box">
+          <div class="g-box">
+            
+          </div>
+
+          
+
+          <div class="jpg">
 
           </div>
+
         </div>
       </div>
+
+      <div class="nota-box">
+        <div class="nota-outter" id="um">
+          <p class="nota">1</p>
+          <img src="./img/nota_1.jpg" alt="" class='n1'>
+        </div>
+        <div class="nota-outter" id="dois">
+          <p class="nota">2</p>
+          <img src="./img/cédula-2-reais_anverso-1.jpg" alt="" class="n2">
+        </div>
+        <div class="nota-outter" id="cinco">
+          <p class="nota">5</p>
+          <img src="./img/Anverso_da_cédula_de_5_reais.png" alt="" class="n5">
+        </div>
+      </div>
+      
+      <!--
+      <div class="nota-box">
+        <div class="nota-outter" id="um">
+          <p class="nota">1</p>
+        </div>
+        <div class="nota-outter" id="dois">
+          <p class="nota">2</p>
+        </div>
+        <div class="nota-outter" id="cinco">
+          <p class="nota">5</p>
+        </div>
+      </div>-->
+
     </div>
 
 
     <script src="machine.js"></script>
-    <script src="item.js"></script>
-    <script src="app.js"></script>
+
   </body>
 </html>

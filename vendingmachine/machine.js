@@ -3,45 +3,33 @@ function Machine() {
 }
 
 Machine.prototype = {
-  loadSodas: function(...args) {
+  loadDoces: function(...args) {
     for (let i = 0; i < args.length; i++) {
       this[args[i].name] = [args[i]];
     }
   },
 
-  countAllSodas() {
-    let total = 0;
-    let self = Object.keys(this);
-    for (let i = 1; i < self.length; i++) {
-      let name = Object.keys(this)[i];
-
-      total += Number(this[name][0].amount);
-    }
-
-    return total;
-  },
-
   update() {
-    let total = this.countAllSodas();
-    let text = `${total} sodas`;
 
-    this.updateIndividualSodas();
-    this.mapSodas();
-    (total > 0) ? document.getElementById('sodaCount').innerHTML = text : document.getElementById('sodaCount').innerHTML = 'Empty';
+    this.updateIndividualDoces();
+    this.mapDoces();
+
   },
 
   turnOn() {
-    document.getElementById('pay').innerHTML = this.money;
+    document.getElementById('pagar').innerHTML = this.money;
 
     this.update();
   },
 
   addChange(amount = 0) {
     this.money+= amount;
+    
+    document.getElementById('d-cont').classList.add('fade');
+    document.querySelector('.jpg').style.opacity = 0;
 
-    // I had to slice the 'money' state because .2 + .2 + .2 in JS is .6000000001 for some reason
     let slice = this.money.toString().slice(0, 4);
-    document.getElementById('pay').innerHTML = slice;
+    document.getElementById('pagar').innerHTML = slice;
   },
 
   purchase(node) {
@@ -54,10 +42,27 @@ Machine.prototype = {
         if (this[self[i]][0].amount > 0) {
           let newAmount = this.money - Number(this[self[i]][0].price);
 
+          document.getElementById('d-cont').innerHTML = `<p>${name} Comprado</p>`
+          document.getElementById('d-cont').classList.remove('fade');
+
+          let doceNum = name.charAt(5);
+          console.log(doceNum);
+
+          if(doceNum == "1"){
+            document.querySelector('.g-box').innerHTML = `<img class="jpg" src="./img/candy1.png" alt="">`
+          }else if(doceNum == "2"){
+            document.querySelector('.g-box').innerHTML = `<img class="jpg" src="./img/candy2.png" alt="">`
+          }else{
+            document.querySelector('.g-box').innerHTML = `<img class="jpg" src="./img/candy3.png" alt="">`
+          }
+          
+          //document.querySelector('.g-box').classList.remove('fade');
+
           this[self[i]][0].amount--;
           this.resetChange(newAmount);
+
         } else {
-          alert(`${name} is out of stock!`);
+          alert(`${name} está esgotado!`);
           this.resetChange(this.money);
         }
 
@@ -69,11 +74,13 @@ Machine.prototype = {
   resetChange(amount = 0) {
     this.money = amount;
 
+    document.getElementById('pagar').innerHTML = amount;
+
     this.update();
     this.addChange();
   },
 
-  updateIndividualSodas() {
+  updateIndividualDoces() {
     let displayBox = document.getElementById('displayBox');
     let self = Object.keys(this);
     let displayArr = [];
@@ -95,9 +102,11 @@ Machine.prototype = {
         displayBox.append(div);
       }
 
+      
+
   },
 
-  mapSodas() {
+  mapDoces() {
     let self = Object.keys(this);
     let objArr = [];
 
@@ -108,9 +117,9 @@ Machine.prototype = {
         for (let j = 0; j < this[self[i]][0].amount; j++) {
           let div = document.createElement('div');
           let para = document.createElement('p');
-          para.className = 'soda-text';
+          para.className = 'doce-text';
           para.innerHTML = name;
-          div.className = `soda ${name}`;
+          div.className = `doce ${name}`;
           div.append(para);
           document.getElementById(`${name}Box`).prepend(div);
         }
@@ -125,7 +134,7 @@ Machine.prototype = {
             machine.purchase(this);
           });
           break;
-        case 'coin-outter':
+        case 'nota-outter':
           nodeList[i].addEventListener('click', function() {
             let amount = Number(this.firstElementChild.innerHTML);
             machine.addChange(amount);
@@ -146,12 +155,6 @@ function Item(name, amount, price, code) {
   this.code = code;
 }
 
-Item.prototype = {
-  sodaCount: function() {
-    return `We have ${this.amount} ${this.name}(s) left in stock`;
-  }
-}
-
 let machine = new Machine();
 let currentDate = new Date();
 currentDate.setDate(currentDate.getDate() + 7);
@@ -162,11 +165,11 @@ let doce3 = new Item('Doce 3', '5', '8', 'C4');
 
 
 
-document.getElementById('return').addEventListener('click', function() {
+document.getElementById('reset').addEventListener('click', function() {
   machine.resetChange();
 });
 
 machine.addListeners(document.querySelectorAll('.button'));
-machine.addListeners(document.querySelectorAll('.coin-outter'));
-machine.loadSodas(doce1, doce2, doce3);
+machine.addListeners(document.querySelectorAll('.nota-outter'));
+machine.loadDoces(doce1, doce2, doce3);
 machine.turnOn();

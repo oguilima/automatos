@@ -1,13 +1,16 @@
 body {
   padding: 0;
   margin: 0;
+  background-image: radial-gradient(rgb(255, 255, 255), rgb(210,210,240));
 }
+
+img{ max-width: 100%; }
 
 .page-wrap {
   height: 100vh;
   position: relative;
   padding: 75px 15px 50px 15px;
-  background-color: #fafafa;
+  background-image: radial-gradient(rgb(255, 255, 255), rgb(240, 240, 250), rgb(210,210,240));
 }
 
 .vend-outer {
@@ -25,8 +28,8 @@ body {
 .display-box {
   position: absolute;
   bottom: 22px;
-  left: 15px;
-  right: 15px;
+  left: 50px;
+  right: 50px;
   height: 25px;
   padding: 0px 12px;
   display: flex;
@@ -40,14 +43,14 @@ body {
   -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow:         inset 0 0 10px #000000;
-  color: goldenrod;
+  color: white;
   align-self: Stretch;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.pay-box {
+.pagar-box {
   position: absolute;
   top: 113px;
   right: 35px;
@@ -61,63 +64,91 @@ body {
    justify-content: center;
    align-items: center;
    color: #ddd;
+   border-radius: 70%;
 }
 
-.coin-box {
+.inserir {
   position: absolute;
-  right: 10px;
-  top: 150px;
-  width: 100px;
-  height: 25px;
+  right: 30px;
+  top: 160px;
+  width: 65px;
+  height: 6px;
   display: flex;
   justify-content: space-around;
+  background-color: black;
+  border-radius: 35%;
 }
 
-.coin-outter {
-  background-color: #ddd;
-  width: 25px;
+
+.nota-box {
+  position: absolute;
+  right: 100px;
+  top: 150px;
+  width: 200px;
+  height: 350px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.nota-outter {
+  width: 200px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #666666;
-  border-radius: 100%;
-  border: 1px dotted #696969;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 
-.help-box {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #333;
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-}
-
-.coin-outter:active {
+.nota-outter:active {
   box-shadow: none;
 }
 
-.soda-count {
+.fade{
+  /*transition: color 6s ease-in;
+  color: rgba(255, 255, 255, 1);*/
+
+  /*animation: fade 1s linear forwards;
+
+  @keyframes fade {
+    0% {  color: rgba(255, 255, 255, 1); }
+    50% {  color: rgba(255, 255, 255, 0.8); }
+    100%{  color: rgba(255, 255, 255, 0.5); }
+  }*/
+
+  animation: fade 2s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+  from {  color: rgba(255, 255, 255, 1); }
+  to {  color: rgba(255, 255, 255, 0); }
+
+}
+
+
+
+.doce-cont {
   position: absolute;
   right: 10px;
   top: 19px;
+  text-align: center;
   background-color: #333;
   -moz-box-shadow:    inset 0 0 10px #000000;
    -webkit-box-shadow: inset 0 0 10px #000000;
    box-shadow:         inset 0 0 10px #000000;
    width: 100px;
-   height: 25px;
+   height: 50px;
    display: flex;
    justify-content: center;
    align-items: center;
-   color: goldenrod;
+   color: white;
    border-radius: 5px;
 }
 
-.pepsi-box {
+.d1-box {
   position: absolute;
   top: 0;
   left: 23px;
@@ -125,54 +156,49 @@ body {
   height: 100%;
 }
 
-.coke-box {
+.d2-box {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 127px;
 }
 
-.sprite-box {
+.d3-box {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 50px;
 }
 
-.fanta-box {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 100px;
-}
-
-.soda,
-.grab-soda {
+.doce,
+.grab-doce {
   position: absolute;
   z-index: 999;
   height: 30px;
-  width: 26px;
+  width: 30px;
   border-radius: 5px;
-  overflow: hidden;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+  text-align: center;
 }
 
-.return-box {
+.reset-box {
   position: absolute;
-  top: 300px;
+  top: 190px;
   right: 55px;
-  background-color: #333;
+  border-radius: 100%;
+  background-color: red;
   width: 10px;
-  height: 15px;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  height: 10px;
+  box-shadow: 0 0 10px 1px rgb(0 0 0 / 30%);
   cursor: pointer;
 }
 
-.return-box:active {
+.reset-box:active {
   box-shadow: none;
 }
 
-.coke {
+.d2 {
   background-color: #D5212B;
   display: flex;
   justify-content: center;
@@ -182,7 +208,7 @@ body {
   left: 0;
 }
 
-.sprite {
+.d3 {
   background-color: #17A053;
   display: flex;
   justify-content: center;
@@ -192,17 +218,7 @@ body {
   left: 0;
 }
 
-.fanta {
-  background-color: #FF8300;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  bottom: 0;
-  left: 0;
-}
-
-.pepsi {
+.d1 {
   background-color: #004A7E;
   display: flex;
   justify-content: center;
@@ -213,45 +229,40 @@ body {
   transition: all .5s;
 }
 
-.price-box {
+.preco-box {
   color: #ddd;
   position: absolute;
   z-index: 99;
 }
 
-.coke-price {
+.d2-preco {
   top: 75px;
-  left: 175px;
+  left: 176px;
 }
 
-.pepsi-price {
+.d1-preco {
   top: 75px;
-  left: 22px;
+  left: 26px;
 }
 
-.fanta-price {
+.d3-preco {
   top: 75px;
-  left: 102px;
-}
-
-.sprite-price {
-  top: 75px;
-  right: 30px;
+  right: 20px;
 }
 
 .touch-pad {
   background-color: #333;
   position: absolute;
   right: 5%;
-  top: 35%;
+  top: 40%;
   width: 75px;
-  height: 100px;
+  height: 150px;
   display: flex;
-  flex-wrap: wrap;
   -moz-box-shadow:    inset 0 0 10px #000000;
    -webkit-box-shadow: inset 0 0 10px #000000;
    box-shadow:         inset 0 0 10px #000000;
    border-radius: 5px;
+  flex-direction: column; 
 }
 
 .button {
@@ -285,7 +296,7 @@ body {
    border-radius: 5px;
 }
 
-.product-row {
+.produto-row {
   background-color: #111;
   border-bottom: 4px solid black;
   height: 81px;
@@ -298,34 +309,29 @@ body {
    position: relative;
 }
 
-.product-row .tag {
+.produto-row .tag {
   position: absolute;
   color: #aaa;
 }
 
-.product-row .tag-one {
+.produto-row .tag-one {
   left: 29px;
   top: 0;
 }
 
-.product-row .tag-two {
+.produto-row .tag-two {
   left: 178px;
   top: 0;
 }
 
-.product-row .tag-three {
+.produto-row .tag-three {
   left: 254px;
   top: 0;
 }
 
-.product-row .tag-four {
-  left: 103px;
-  top: 0;
-}
-
-.spiral {
+.espiral {
   background: transparent;
-  border: 2px solid silver;
+  border: 2px groove silver;
   border-radius: 100%;
   width: 20px;
   height: 20px;
@@ -336,10 +342,10 @@ body {
   z-index: 9;
 }
 
-.inner-spiral {
-  width: 60%;
-  height: 60%;
-  border: 2px solid silver;
+.in-espiral {
+  width: 100%;
+  height: 90%;
+  border: 1px groove silver;
   border-radius: 100%;
   z-index: 8;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 1);
@@ -359,7 +365,7 @@ body {
   border-radius: 5px;
 }
 
-.grab-box {
+.g-box {
   background-color: #333;
   position: absolute;
   right: 2%;
@@ -376,18 +382,38 @@ body {
   overflow: hidden;
 }
 
-.bottom-box {
-  padding-top: 150px;
-  background-color: #70D3D0;
-  border-top: 1px solid #ddd;
-  padding: 25px;
-  text-align: center;
-  color: #fff;
-  z-index: 9999;
+.jpg {
+  transition: opacity 1s ease-in;
+  opacity: 1;
 }
 
-.heart,
-.bottom-box a {
-  color: #E7263B;
-  text-decoration: none;
+
+/*.n{
+  margin-right: 30%;
+  margin-top: 15%;
+}
+
+.n img{
+  width: 150px;
+  height: 60px;
+}*/
+
+.n1:hover{
+  width: 160px;
+  height: 70px;
+  transition: 0.3s;
+}
+.n5:hover{
+  width: 160px;
+  height: 70px;
+  transition: 0.3s;
+}
+.n2:hover{
+  width: 160px;
+  height: 70px;
+  transition: 0.3s;
+}
+
+.nota{
+  visibility: hidden;
 }
